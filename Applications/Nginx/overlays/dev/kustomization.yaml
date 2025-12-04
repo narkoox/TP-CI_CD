@@ -1,18 +1,16 @@
-# Applications/Nginx/overlays/dev/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+namespace: ns-nginx-dev
+
 resources:
   - ../../base
+  - namespace.yaml
 
-# On change la version d'image pour l'environnement DEV
 images:
   - name: nginx
-    newTag: alpine
+    newTag: alpine    # ex : nginx:alpine en DEV
 
-# Patch de la ConfigMap pour afficher qu'on est en DEV
-patches:
-  - path: configmap-dev.yaml
-    target:
-      kind: ConfigMap
-      name: nginx-index
+patchesStrategicMerge:
+  - configmap-dev.yaml
+  - service-dev.yaml
