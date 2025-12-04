@@ -8,12 +8,12 @@ data:
     <html lang="fr">
     <head>
       <meta charset="UTF-8" />
-      <title>Bienvenue - ns-nginx (DEV)</title>
+      <title>Bienvenue - ns-nginx-dev</title>
       <style>
         body {
           font-family: Arial, sans-serif;
-          background: linear-gradient(135deg, #1f2933, #111827);
-          color: #f9fafb;
+          background: linear-gradient(135deg, #0f172a, #020617);
+          color: #e5e7eb;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -21,14 +21,8 @@ data:
           height: 100vh;
           margin: 0;
         }
-        h1 {
-          font-size: 3rem;
-          margin-bottom: 0.5rem;
-        }
-        p {
-          font-size: 1.1rem;
-          opacity: 0.9;
-        }
+        h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+        p { font-size: 1.1rem; opacity: 0.9; }
         .badge {
           margin-top: 1rem;
           padding: 0.4rem 0.8rem;
@@ -41,9 +35,8 @@ data:
       </style>
     </head>
     <body>
-      <h1>Nginx 🚀</h1>
-      <p>Environnement : <strong>DEV</strong></p>
-      <p>Déployé via ArgoCD sur mon cluster Kubernetes.</p>
-      <div class="badge">NodePort : 30181</div>
+      <h1>Nginx 🚧 DEV</h1>
+      <p>Environnement de développement déployé via ArgoCD.</p>
+      <div class="badge">NodePort : 30180</div>
     </body>
     </html>
