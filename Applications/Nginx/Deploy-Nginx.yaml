@@ -71,6 +71,8 @@ spec:
       labels:
         app: nginx
     spec:
+      securityContext:
+        runAsNonRoot: true
       imagePullSecrets:
         - name: dockerhub-cred
       containers:
