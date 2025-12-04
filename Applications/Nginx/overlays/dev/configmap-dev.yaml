@@ -1,53 +1,49 @@
-# Applications/Nginx/overlays/dev/configmap-dev.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: nginx-index
-  namespace: ns-nginx
 data:
   index.html: |
     <!DOCTYPE html>
     <html lang="fr">
     <head>
-        <meta charset="UTF-8">
-        <title>Bienvenue sur Nginx - DEV</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #1e1e1e;
-                color: #f5f5f5;
-                text-align: center;
-                padding: 50px;
-            }
-            h1 {
-                color: #61dafb;
-            }
-            .env-banner {
-                margin-top: 20px;
-                padding: 10px 20px;
-                display: inline-block;
-                border-radius: 5px;
-                background-color: #333;
-                border: 1px solid #61dafb;
-                font-weight: bold;
-            }
-            p {
-                font-size: 18px;
-            }
-            .info {
-                margin-top: 30px;
-                font-size: 14px;
-                color: #cccccc;
-            }
-        </style>
+      <meta charset="UTF-8" />
+      <title>Bienvenue - ns-nginx (DEV)</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          background: linear-gradient(135deg, #1f2933, #111827);
+          color: #f9fafb;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          margin: 0;
+        }
+        h1 {
+          font-size: 3rem;
+          margin-bottom: 0.5rem;
+        }
+        p {
+          font-size: 1.1rem;
+          opacity: 0.9;
+        }
+        .badge {
+          margin-top: 1rem;
+          padding: 0.4rem 0.8rem;
+          border-radius: 999px;
+          border: 1px solid #4b5563;
+          font-size: 0.85rem;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+        }
+      </style>
     </head>
     <body>
-        <h1>Bienvenue sur Nginx !</h1>
-        <div class="env-banner">Environnement : DEV</div>
-        <p>Cette page est servie par le Nginx déployé sur votre cluster Kubernetes.</p>
-        <div class="info">
-            <p>Hostname du nœud : ${NODE_NAME}</p>
-            <p>Nom du Pod : ${POD_NAME}</p>
-        </div>
+      <h1>Nginx 🚀</h1>
+      <p>Environnement : <strong>DEV</strong></p>
+      <p>Déployé via ArgoCD sur mon cluster Kubernetes.</p>
+      <div class="badge">NodePort : 30181</div>
     </body>
     </html>
