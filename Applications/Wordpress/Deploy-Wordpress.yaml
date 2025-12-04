@@ -21,7 +21,7 @@ spec:
         - name: dockerhub-cred
       containers:
         - name: mariadb
-          image: bitnami/mariadb:10.11
+          image: bitnami/mariadb:latest
           securityContext:
             readOnlyRootFilesystem: true
             allowPrivilegeEscalation: false
