@@ -8,11 +8,11 @@ data:
     <html lang="fr">
     <head>
       <meta charset="UTF-8" />
-      <title>Bienvenue - ns-nginx (PROD)</title>
+      <title>Bienvenue - ns-nginx-prod</title>
       <style>
         body {
           font-family: Arial, sans-serif;
-          background: linear-gradient(135deg, #111827, #020617);
+          background: linear-gradient(135deg, #022c22, #020617);
           color: #f9fafb;
           display: flex;
           flex-direction: column;
@@ -21,31 +21,22 @@ data:
           height: 100vh;
           margin: 0;
         }
-        h1 {
-          font-size: 3rem;
-          margin-bottom: 0.5rem;
-        }
-        p {
-          font-size: 1.1rem;
-          opacity: 0.9;
-        }
+        h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+        p { font-size: 1.1rem; opacity: 0.9; }
         .badge {
           margin-top: 1rem;
           padding: 0.4rem 0.8rem;
           border-radius: 999px;
-          border: 1px solid #f97316;
+          border: 1px solid #16a34a;
           font-size: 0.85rem;
           text-transform: uppercase;
           letter-spacing: 0.08em;
-          background: #f97316;
-          color: #111827;
         }
       </style>
     </head>
     <body>
-      <h1>Nginx 🚀</h1>
-      <p>Environnement : <strong>PROD</strong></p>
-      <p>Déployé via ArgoCD sur mon cluster Kubernetes.</p>
-      <div class="badge">NodePort : 30180</div>
+      <h1>Nginx ✅ PROD</h1>
+      <p>Environnement de production déployé via ArgoCD.</p>
+      <div class="badge">NodePort : 30190</div>
     </body>
     </html>
