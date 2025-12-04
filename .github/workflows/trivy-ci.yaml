@@ -21,7 +21,7 @@ jobs:
 
       # Scan les manifests / YAML (IaC mode)
       - name: Run Trivy config scan on Kubernetes manifests
-        uses: aquasecurity/trivy-action@v0.33.1
+        uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'config'          # Mode IaC (K8s, Terraform, etc.)
           scan-ref: './Applications'   # Dossier avec tes YAML
