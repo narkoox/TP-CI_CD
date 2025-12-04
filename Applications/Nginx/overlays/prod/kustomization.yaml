@@ -1,18 +1,16 @@
-# Applications/Nginx/overlays/prod/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+namespace: ns-nginx-prod
+
 resources:
   - ../../base
+  - namespace.yaml
 
-# Image Nginx pour la prod (tu peux mettre une version précise si tu veux)
 images:
   - name: nginx
-    newTag: stable
+    newTag: stable   # PROD : nginx:stable, comme ta base
 
-# Patch de la ConfigMap pour afficher qu'on est en PROD
-patches:
-  - path: configmap-prod.yaml
-    target:
-      kind: ConfigMap
-      name: nginx-index
+patchesStrategicMerge:
+  - configmap-prod.yaml
+  - service-prod.yaml
