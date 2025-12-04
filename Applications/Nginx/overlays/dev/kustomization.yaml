@@ -5,12 +5,9 @@ namespace: ns-nginx-dev
 
 resources:
   - ../../base
-  - namespace.yaml
+  - namespace-dev.yaml
 
-images:
-  - name: nginx
-    newTag: alpine    # ex : nginx:alpine en DEV
-
-patchesStrategicMerge:
-  - configmap-dev.yaml
-  - service-dev.yaml
+patches:
+  - path: configmap-dev.yaml
+  - path: deployment-dev.yaml
+  - path: service-dev.yaml
