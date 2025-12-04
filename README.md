@@ -1,9 +1,9 @@
 # TP-CI_CD
 
-Ce dépôt contient un mini pipeline **CI/CD** basé sur **Argo CD** pour déployer automatiquement des applications sur un cluster Kubernetes installé avec **kubeadm**.
+Ce dépôt contient un mini pipeline **CI/CD** basé sur **Argo CD**, **GitHub Actions** et **Kustomize** pour déployer automatiquement des applications sur un cluster Kubernetes installé avec **kubeadm**.
 
 L’objectif est simple :  
-> **chaque changement dans les manifests Kubernetes de ce dépôt est automatiquement appliqué sur le cluster par Argo CD.**
+> **à chaque commit sur la branche `main` qui modifie les manifests Kubernetes, un scan de sécurité est lancé, et Argo CD se charge d’appliquer les changements sur le cluster.**
 
 ---
 
@@ -13,17 +13,26 @@ L’objectif est simple :
 TP-CI_CD/
 ├── Applications/
 │   ├── Nginx/
-│   │   └── deploy-nginx.yaml
+│   │   ├── base/
+│   │   │   ├── deploy-nginx.yaml
+│   │   │   └── kustomization.yaml
+│   │   └── overlays/
+│   │       ├── dev/
+│   │       │   ├── kustomization.yaml
+│   │       │   ├── namespace-dev.yaml
+│   │       │   ├── configmap-dev.yaml
+│   │       │   ├── deployment-dev.yaml
+│   │       │   └── service-dev.yaml
+│   │       └── prod/
+│   │           ├── kustomization.yaml
+│   │           ├── namespace-prod.yaml
+│   │           ├── configmap-prod.yaml
+│   │           ├── deployment-prod.yaml
+│   │           └── service-prod.yaml
 │   └── Wordpress/
 │       └── deploy-wordpress.yaml
 ├── ArgoCD/
-│   ├── ArgoCD_applications.png
-│   ├── ArgoCD_cluster.png
-│   ├── ArgoCD_nginx.png
-│   ├── ArgoCD_nginx_page.png
-│   ├── ArgoCD_pods.png
-│   ├── ArgoCD_pods_apps.png
-│   ├── ArgoCD_repo.png
-│   ├── ArgoCD_wordpress.png
-│   └── ArgoCD_wordpress_page.png
-└── README.md
+│   └── (captures d’écran Argo CD : apps, pods, synchro, etc.)
+└── .github/
+    └── workflows/
+        └── trivy-ci.yaml
