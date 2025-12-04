@@ -5,12 +5,9 @@ namespace: ns-nginx-prod
 
 resources:
   - ../../base
-  - namespace.yaml
+  - namespace-prod.yaml
 
-images:
-  - name: nginx
-    newTag: stable   # PROD : nginx:stable, comme ta base
-
-patchesStrategicMerge:
-  - configmap-prod.yaml
-  - service-prod.yaml
+patches:
+  - path: configmap-prod.yaml
+  - path: deployment-prod.yaml
+  - path: service-prod.yaml
