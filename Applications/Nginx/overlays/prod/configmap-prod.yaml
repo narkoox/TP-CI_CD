@@ -1,0 +1,53 @@
+# Applications/Nginx/overlays/prod/configmap-prod.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-index
+  namespace: ns-nginx
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Bienvenue sur Nginx - PROD</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #ffffff;
+                color: #222222;
+                text-align: center;
+                padding: 50px;
+            }
+            h1 {
+                color: #ff6600;
+            }
+            .env-banner {
+                margin-top: 20px;
+                padding: 10px 20px;
+                display: inline-block;
+                border-radius: 5px;
+                background-color: #ff6600;
+                color: #ffffff;
+                font-weight: bold;
+            }
+            p {
+                font-size: 18px;
+            }
+            .info {
+                margin-top: 30px;
+                font-size: 14px;
+                color: #555555;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Bienvenue sur Nginx !</h1>
+        <div class="env-banner">Environnement : PROD</div>
+        <p>Cette page est servie par le Nginx de production sur votre cluster Kubernetes.</p>
+        <div class="info">
+            <p>Hostname du nœud : ${NODE_NAME}</p>
+            <p>Nom du Pod : ${POD_NAME}</p>
+        </div>
+    </body>
+    </html>
