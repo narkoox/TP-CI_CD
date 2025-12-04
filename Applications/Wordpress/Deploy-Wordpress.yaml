@@ -21,7 +21,7 @@ spec:
         - name: dockerhub-cred
       containers:
         - name: mariadb
-          image: mariadb:10.11
+          image: bitnami/mariadb:10.11
           securityContext:
             readOnlyRootFilesystem: true
             allowPrivilegeEscalation: false
@@ -93,7 +93,7 @@ spec:
         - name: dockerhub-cred
       containers:
         - name: wordpress
-          image: wordpress:latest
+          image: bitnami/wordpress:latest
           securityContext:
             readOnlyRootFilesystem: true
             allowPrivilegeEscalation: false
