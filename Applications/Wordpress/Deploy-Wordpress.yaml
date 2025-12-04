@@ -23,7 +23,6 @@ spec:
         - name: mariadb
           image: bitnami/mariadb:latest
           securityContext:
-            readOnlyRootFilesystem: true
             allowPrivilegeEscalation: false
             capabilities:
               drop:
@@ -95,7 +94,6 @@ spec:
         - name: wordpress
           image: bitnami/wordpress:latest
           securityContext:
-            readOnlyRootFilesystem: true
             allowPrivilegeEscalation: false
             capabilities:
               drop:
