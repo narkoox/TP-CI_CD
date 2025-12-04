@@ -27,6 +27,6 @@ jobs:
           scan-ref: './Applications'   # Dossier avec tes YAML
           hide-progress: true
           format: 'table'              # Affichage lisible dans les logs
-          severity: 'LOW,MEDIUM,HIGH,CRITICAL'    # On cible les problèmes sérieux
+          severity: 'HIGH,CRITICAL'    # On cible les problèmes sérieux
           ignore-unfixed: true         # Ignore les CVE sans correctif dispo
           exit-code: '1'               # Fait échouer le job si vulnérabilités
