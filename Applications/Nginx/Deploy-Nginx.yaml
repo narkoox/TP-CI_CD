@@ -1,4 +1,4 @@
-#Test Action trivy
+#Test Action trivy master
 apiVersion: v1
 kind: Namespace
 metadata:
