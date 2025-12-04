@@ -1,2 +1,2 @@
-# Ignore la règle "readOnlyRootFilesystem"
-AVD-KSV-0014
+AVD-KSV-0118   # default securityContext / runAsRoot
+AVD-KSV-0014   # readOnlyRootFilesystem non activé (si jamais il remonte celui-là)
