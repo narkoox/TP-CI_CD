@@ -1,6 +1,6 @@
 # TP-CI_CD
 
-Ce dépôt contient un mini pipeline **CI/CD GitOps** basé sur **Argo CD** pour déployer automatiquement des applications sur un cluster Kubernetes installé avec **kubeadm**.
+Ce dépôt contient un mini pipeline **CI/CD** basé sur **Argo CD** pour déployer automatiquement des applications sur un cluster Kubernetes installé avec **kubeadm**.
 
 L’objectif est simple :  
 > **chaque changement dans les manifests Kubernetes de ce dépôt est automatiquement appliqué sur le cluster par Argo CD.**
