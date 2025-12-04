@@ -20,6 +20,12 @@ spec:
       containers:
         - name: mariadb
           image: mariadb:10.11
+          securityContext:
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
           env:
             - name: MYSQL_DATABASE
               valueFrom:
@@ -84,6 +90,12 @@ spec:
       containers:
         - name: wordpress
           image: wordpress:latest
+          securityContext:
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
           env:
             - name: WORDPRESS_DB_HOST
               value: wordpress-mysql
